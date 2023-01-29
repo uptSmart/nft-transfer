@@ -2,6 +2,7 @@ package types
 
 import (
 	"bytes"
+	"fmt"
 	"testing"
 )
 
@@ -98,6 +99,8 @@ func TestNonFungibleTokenPacketData_ValidateBasic(t *testing.T) {
 }
 
 func TestNonFungibleTokenPacketData_GetBytes(t *testing.T) {
+
+	fmt.Println("xxl TestNonFungibleTokenPacketData_GetBytes ...")
 	type fields struct {
 		ClassId   string
 		ClassUri  string

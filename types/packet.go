@@ -1,6 +1,7 @@
 package types
 
 import (
+	"fmt"
 	"strings"
 	"time"
 
@@ -91,6 +92,10 @@ func (nftpd NonFungibleTokenPacketData) GetBytes() []byte {
 	if requireShape(nftpd.TokenData) {
 		nftpd.TokenData = nil
 	}
+
+	fmt.Printf("###xxl nftpd %v \n", nftpd)
+	fmt.Printf("###xxl MustProtoMarshalJSON(&nftpd) %v \n", MustProtoMarshalJSON(&nftpd))
+
 	return sdk.MustSortJSON(MustProtoMarshalJSON(&nftpd))
 }
 
